@@ -1,0 +1,8 @@
+name: Reko-Link
+version: '${project.version}'
+main: net.technotalks.rekolink.RekoLink
+api-version: 1.19
+prefix: Reko-Link
+authors: [ TechnoTalks ]
+description: Link your plugin to your discord with Reko!
+website: www.technotalks.net
