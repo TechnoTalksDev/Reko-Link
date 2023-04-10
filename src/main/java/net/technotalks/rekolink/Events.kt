@@ -1,8 +1,6 @@
 package net.technotalks.rekolink
 import io.papermc.paper.event.player.AsyncChatEvent
-import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.TextComponent
-import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.event.EventHandler
@@ -22,7 +20,7 @@ class Events(private val socketServer: SocketServer) : Listener {
             player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cWe don't talk about the drill around these parts..."))
         }else {
             Bukkit.getLogger().info("Trying to send message through webSocket!")
-            socketServer.sendMessage("<$playerName> $message")
+            socketServer.sendMessage("{ \"player\": $playerName, \"msg\": $message }")
         }
     }
 
