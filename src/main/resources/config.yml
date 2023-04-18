@@ -1,5 +1,25 @@
-# Rider Config! #
+# Reko-Link Config! #
+
+#    Connection Settings
+#****************************
 
 #This is a PASSWORD make sure it's private
 #CHANGE THIS IMMEDIATELY AFTER FIRST INSTALL
 token: "Default"
+
+#This port needs to be open like your server port!
+#Reko will connect to this port like server-ip:port
+#Make sure to port-forward this too!
+port: 8080
+
+#     Privacy Settings
+#****************************
+
+#Send in game chat to discord
+chatToDiscord: true
+
+#Send player join and leave messages to discord
+joinLeaveToDiscord: true
+
+#Recieve messages from discord channel
+receiveDiscord: true

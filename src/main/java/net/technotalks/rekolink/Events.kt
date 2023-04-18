@@ -12,16 +12,7 @@ class Events(private val socketServer: SocketServer) : Listener {
         val msgComponent= e.message() as TextComponent
         val message = msgComponent.content()
         val playerName = e.player.name
-
-        if (message.contains("drill", ignoreCase = true)) {
-            e.isCancelled = true
-            val player = e.player
-
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cWe don't talk about the drill around these parts..."))
-        }else {
-            Bukkit.getLogger().info("Trying to send message through webSocket!")
-            socketServer.sendMessage("{ \"player\": $playerName, \"msg\": $message }")
-        }
+        socketServer.sendMessage("{\"type\": \"chat\", \"player\": \"$playerName\", \"msg\": \"$message\" }")
     }
 
 }

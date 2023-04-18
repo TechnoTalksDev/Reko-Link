@@ -6,10 +6,10 @@ import org.bukkit.plugin.java.JavaPlugin
 class RekoLink : JavaPlugin() {
     private lateinit var socketServer: SocketServer
     override fun onEnable() {
-        socketServer = SocketServer(8080, this)
+        val port = this.config.getInt("port")
+        socketServer = SocketServer(port, this)
         socketServer.start()
-        logger.info("RekoLink has loaded")
-        socketServer.sendMessage("Plugin has initialized")
+        //socketServer.sendMessage("Plugin has initialized")
         getPluginManager().registerEvents(Events(socketServer), this)
         this.config.options().copyDefaults()
         saveDefaultConfig()
@@ -17,6 +17,5 @@ class RekoLink : JavaPlugin() {
 
     override fun onDisable() {
         socketServer.stop()
-        logger.info("RekoLink is shutting down")
     }
 }
