@@ -10,7 +10,7 @@ class RekoLink : JavaPlugin() {
         socketServer = SocketServer(port, this)
         socketServer.start()
         //socketServer.sendMessage("Plugin has initialized")
-        getPluginManager().registerEvents(Events(socketServer), this)
+        getPluginManager().registerEvents(Events(socketServer, this), this)
         this.config.options().copyDefaults()
         saveDefaultConfig()
     }

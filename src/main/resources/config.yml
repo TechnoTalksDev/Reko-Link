@@ -10,7 +10,7 @@ token: "Default"
 #This port needs to be open like your server port!
 #Reko will connect to this port like server-ip:port
 #Make sure to port-forward this too!
-port: 8080
+port: 5050
 
 #     Privacy Settings
 #****************************
@@ -20,6 +20,3 @@ chatToDiscord: true
 
 #Send player join and leave messages to discord
 joinLeaveToDiscord: true
-
-#Recieve messages from discord channel
-receiveDiscord: true
